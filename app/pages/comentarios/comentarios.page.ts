@@ -27,7 +27,7 @@ export class ComentariosPage implements OnInit {
     this.comentariosService.getComments().subscribe(resp =>{
       console.log('comentarios', resp);
       this.comentarios = resp;
-      //Se ordena la deshabilitacion en mostrarComentarios() que se activa con onClick, por ende, se debe incluir en el html al ordenar el disabled
+      //Se ordena la deshabilitacion en mostrarComentarios() que se activa con Click, por ende, se debe incluir en el html al ordenar el disabled
       //creditos https://forum.ionicframework.com/
       this.frenar='disabled';
     })
