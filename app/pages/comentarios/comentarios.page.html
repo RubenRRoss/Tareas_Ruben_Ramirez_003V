@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title>comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-button id="botonsin" (click)="mostrarComentarios()" color="secondary" 
+  expand="full" fill="outline" shape="round" [disabled]="frenar">
+    Ver comentarios
+   </ion-button> <!--Se llama a frenar esto se hace posible al hacer click, porque en mostrarComentarios() se incluyó la desactivacion -->
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+          *ngFor="let unComentario of comentarios">
+
+          <ion-card color="dark">
+            <ion-card-header>
+                <ion-card-subtitle>{{unComentario.id}}</ion-card-subtitle>
+                <ion-card-title>{{unComentario.name}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p>
+                {{unComentario.email}}
+                {{unComentario.body}}
+              </p>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
